@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PhD Research & Publication Support</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px;
+    }
+
+    h1 {
+      font-size: 36px;
+      text-align: center;
+      color: #03043b;
+      margin-bottom: 40px;
+    }
+
+    .pub-section {
+      background-color: #ffffff;
+      padding: 30px;
+      margin-bottom: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .pub-section h2 {
+      font-size: 28px;
+      color: #03043b;
+      margin-bottom: 20px;
+    }
+
+    .pub-section p {
+      font-size: 16px;
+      color: #333;
+      line-height: 1.8;
+    }
+
+    .pub-section ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .pub-section ul li {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .pub-section ul li strong {
+      font-weight: 600;
+      color: #03043b;
+    }
+
+    .pub-section ul li i {
+      font-size: 20px;
+      color: #ffb400;
+    }
+
+    /* Stages Section */
+    .stages-section {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 60px;
+      justify-content: center;
+    }
+
+    .stage-card {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      width: 230px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .stage-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .stage-card h3 {
+      font-size: 22px;
+      color: #03043b;
+      margin-bottom: 15px;
+    }
+
+    .stage-card p {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .stage-card .stage-title {
+      font-weight: bold;
+      color: #ffb400;
+    }
+    a {
+      display: inline-block;
+      margin-top: 30px;
+      color: #0077cc;
+      text-decoration: none;
+    }
+    /* Flex layout for section with image */
+.pub-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  align-items: center;
+}
+
+.pub-text {
+  flex: 1;
+  min-width: 300px;
+}
+
+.pub-image {
+  flex: 1;
+  min-width: 280px;
+  text-align: center;
+}
+
+.pub-image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Responsive handling for pub-flex layout */
+@media (max-width: 768px) {
+  .pub-flex {
+    flex-direction: column;
+  }
+
+  .pub-image img {
+    max-width: 100%;
+  }
+}
+
+    /* Responsive design for mobile */
+    @media (max-width: 768px) {
+      .stages-section {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .container {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+    }
+/* Footer Styles */
+#footer {
+  background: #03043b;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  position: relative;
+}
+
+.footer-top {
+  padding: 30px 20px; /* ↓ Reduced from 60px */
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 100%; /* Full width */
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.footer-column {
+  flex: 1 1 220px;
+  margin: 10px; /* ↓ Reduced from 20px */
+  min-width: 220px;
+}
+
+.footer-logo {
+  width: 70px; /* Optional: Slightly smaller */
+  margin-bottom: 15px;
+}
+
+.footer-column h4 {
+  margin-bottom: 15px; /* ↓ Reduced spacing */
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.footer-column p {
+  line-height: 1.6; /* ↓ Less vertical space */
+  font-size: 13px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px; /* ↓ Less space between items */
+  font-size: 15px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.footer-column ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-column ul li a:hover {
+  color: #ffc107;
+}
+
+.footer-column ul li i {
+  margin-right: 8px;
+  font-size: 15px;
+  margin-top: 2px;
+}
+
+.support-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* ↓ Less margin */
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.support-info i {
+  margin-right: 12px;
+  font-size: 18px;
+  margin-top: 2px;
+}
+
+.social-links {
+  margin-top: 15px; /* ↓ Less margin */
+}
+
+.social-links a {
+  display: inline-block;
+  margin-right: 8px;
+  font-size: 16px;
+  color: #fff;
+  background: #000;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.social-links a:hover {
+  background: #ffc107;
+  color: #000;
+}
+
+.footer-bottom {
+  background: #02122b;
+  padding: 15px; /* ↓ Reduced padding */
+  text-align: center;
+  font-size: 13px;
+}
+
+.footer-bottom p {
+  margin: 8px 0;
+}
+
+.footer-bottom p span {
+  color: #ffc107;
+  font-weight: 600;
+}
+
+.footer-links {
+  margin-top: 8px;
+}
+
+.footer-links a {
+  color: #fff;
+  margin: 0 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-links a:hover {
+  color: #ffc107;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .footer-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .footer-column {
+    flex: 1 1 45%;
+    margin: 10px;
+    text-align: center;
+  }
+  .footer-column ul li {
+    justify-content: center;
+  }
+  .support-info {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-column {
+    flex: 1 1 100%;
+    margin: 10px 0;
+    text-align: center;
+  }
+  .footer-column ul li {
+    justify-content: center;
+  }
+  .support-info {
+    justify-content: center;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="container"> 
+    <h1>PhD Research & Publication Support</h1>
+
+    <div class="pub-section">
+      <h2>Our Commitment to Research Excellence</h2>
+      <p>DevMatrixLab has guided 1,500+ PhD scholars in publishing research in top-tier journals like <strong>SCI, Scopus, IEEE, Springer, Elsevier, and UGC CARE</strong>. Our approach is rooted in academic precision, originality, and institutional compliance — ensuring your research stands out globally.</p>
+      <p>We collaborate with scholars from diverse disciplines including engineering, management, life sciences, and humanities.</p>
+      <p>Each manuscript undergoes multi-level scrutiny to meet international publication standards.</p>
+      <p>Our experts stay updated with evolving journal guidelines and impact factor dynamics.</p>
+      <p>We ensure alignment with your university’s expectations and research objectives.</p>
+      <p>From idea to publication, our structured process guarantees transparency and timely delivery.</p>
+    </div>
+
+    <div class="pub-section pub-flex">
+      <div class="pub-text">
+        <h2>Publication Services We Offer</h2>
+        <ul>
+          <li><i class="fas fa-check-circle"></i><strong>Topic Finalization:</strong> Aligned with current trends and future scope</li>
+          <li><i class="fas fa-check-circle"></i><strong>Proposal & Synopsis Writing:</strong> Clear, compelling, and university-compliant</li>
+          <li><i class="fas fa-check-circle"></i><strong>Thesis & Dissertation Support:</strong> Structure, formatting, references, plagiarism check</li>
+          <li><i class="fas fa-check-circle"></i><strong>Manuscript Writing:</strong> For SCI/Scopus/UGC – zero plagiarism, high citation impact</li>
+          <li><i class="fas fa-check-circle"></i><strong>Journal Selection:</strong> Based on impact factor, scope, and turnaround time</li>
+          <li><i class="fas fa-check-circle"></i><strong>Peer Review Handling:</strong> Revision strategies, reviewer rebuttals, editing support</li>
+          <li><i class="fas fa-check-circle"></i><strong>Conference Paper Assistance:</strong> IEEE, ACM, Springer conference publications</li>
+        </ul>
+      </div>
+      <div class="pub-image">
+        <img src="image/services we offer.jpg" alt="Publication Services" />
+      </div>
+    </div>
+
+    <div class="pub-section">
+      <h2>Our Strengths</h2>
+      <ul>
+        <li><i class="fas fa-check-circle"></i>100% plagiarism-free and grammatically polished manuscripts</li>
+        <li><i class="fas fa-check-circle"></i>Guidance for SCI, ESCI, Scopus Q1-Q4 journals with targeted indexing</li>
+        <li><i class="fas fa-check-circle"></i>Academic writing experts with PhDs across engineering, science, management, and arts</li>
+        <li><i class="fas fa-check-circle"></i>Guaranteed formatting compliance (APA, IEEE, MLA, etc.)</li>
+        <li><i class="fas fa-check-circle"></i>Ethical publishing practices and strict confidentiality</li>
+      </ul>
+    </div>
+
+    <div class="pub-section">
+      <h2>Recent Publications</h2>
+      <p><strong>Dr. Keerthi (Computer Science):</strong> Published in IEEE Access on “AI-Powered Intrusion Detection Systems for Cloud Environments” – Impact Factor 3.9</p>
+      <p><strong>Mr. Ramesh (Management):</strong> Published in Elsevier journal on “Post-COVID Consumer Behaviour Models” – Scopus Indexed</p>
+      <p><strong>Ms. Ayesha (Biotechnology):</strong> Published in Springer Nature on “CRISPR Gene Editing Tools in Rare Disease Diagnosis”</p>
+      <p><strong>Dr. Nikhil (Mechanical Engineering):</strong> Published in Scopus Q2 journal on “Advanced Composites in Aerospace Applications”</p>
+      <p><strong>Ms. Sneha (Psychology):</strong> Published in UGC CARE on “Cognitive Behavioral Therapy Impact on Adolescents with Anxiety Disorders”</p>
+      <p><strong>Mr. Arjun (Civil Engineering):</strong> Published in Elsevier journal on “Seismic Retrofitting Techniques for Urban Infrastructure”</p>
+      <p><strong>Dr. Fatima (Pharmaceutical Sciences):</strong> Published in Springer on “Nanocarrier Drug Delivery Systems in Oncology” – Scopus Indexed</p>
+      <p><strong>Mr. Rajeev (Education):</strong> Published in UGC CARE on “Digital Pedagogy Trends in Post-Pandemic Classrooms”</p>
+    </div>
+    <div class="pub-section">
+      <h2>Why Scholars Trust Us</h2>
+      <ul>
+        <li><i class="fas fa-check-circle"></i>Personalized 1-on-1 research mentorship</li>
+        <li><i class="fas fa-check-circle"></i>Timely delivery for university deadlines</li>
+        <li><i class="fas fa-check-circle"></i>Real-time progress tracking and transparent communication</li>
+        <li><i class="fas fa-check-circle"></i>Affordable packages for PhD scholars and researchers</li>
+        <li><i class="fas fa-check-circle"></i>Publication success in 25+ countries</li>
+      </ul>
+    </div>
+
+    <!-- Stages Section -->
+    <div class="stages-section">
+      <div class="stage-card">
+        <h3>Stage 1</h3>
+        <p><span class="stage-title">Statement of Purpose</span><br> The Statement of Purpose (SOP) is a crucial component that outlines your research interests, academic goals, and the importance of your research work. It demonstrates your passion and aligns your academic journey with the broader research community.<br><br><span class="stage-title">Thesis Proposal Writing</span><br> Crafting a compelling thesis proposal is essential to ensure that your research topic is well-defined, original, and impactful. Our team guides you through structuring your proposal to meet university requirements and demonstrate the feasibility of your research plan.</p>
+      </div>
+
+      <div class="stage-card">
+        <h3>Stage 2</h3>
+        <p><span class="stage-title">Concept Paper</span><br> A concept paper serves as a precursor to your research. It outlines the problem statement, methodology, and the significance of the research. It helps clarify the scope and expected outcomes of your research.<br><br><span class="stage-title">Problem Statement</span><br> The problem statement defines the specific issue or research gap that your study will address. It is a key element in framing your research and guiding your methodology. Our experts assist you in formulating a strong and clear problem statement.</p>
+      </div>
+
+      <div class="stage-card">
+        <h3>Stage 3</h3>
+        <p><span class="stage-title">Review of Literature</span><br> Conducting a comprehensive review of existing literature is essential to identify gaps in knowledge. It establishes the foundation for your research and provides context to your study.<br><br><span class="stage-title">Questionnaire</span><br> Developing a well-structured questionnaire is critical to gathering accurate data for your research. We help you design questionnaires that align with your research objectives, ensuring data reliability.</p>
+      </div>
+
+      <div class="stage-card">
+        <h3>Stage 4</h3>
+        <p><span class="stage-title">Software Implementation</span><br> Implementing software tools or techniques is often a significant part of your research. This stage involves selecting and working with the right software to solve your research problems effectively.<br><br><span class="stage-title">Data Analysis</span><br> Once data is collected, proper analysis is required to draw meaningful conclusions. Our team guides you through statistical methods or software tools to analyze your research data.</p>
+      </div>
+
+      <div class="stage-card">
+        <h3>Stage 5</h3>
+        <p><span class="stage-title">Writing</span><br> Writing your research paper involves careful structuring of your findings, methodology, and conclusions. We assist you in creating a coherent narrative that is academically rigorous.<br><br><span class="stage-title">Proofreading</span><br> Ensuring that your manuscript is free from grammatical, typographical, and stylistic errors is vital. Our proofreading service guarantees that your research is polished and ready for submission.</p>
+      </div>
+
+      <div class="stage-card">
+        <h3>Stage 6</h3>
+        <p><span class="stage-title">Editing</span><br> After proofreading, editing refines the clarity, flow, and structure of your manuscript. Our expert editors ensure that your content meets the highest academic standards.<br><br><span class="stage-title">Formatting</span><br> Proper formatting is crucial for publication submission. We ensure that your paper adheres to the required style guides, including APA, IEEE, MLA, and others.</p>
+      </div>
+
+      <div class="stage-card">
+        <h3>Stage 7</h3>
+        <p><span class="stage-title">Defense Preparation</span><br> Preparing for your thesis defense involves presenting your research clearly and confidently. We help you craft your defense presentation and anticipate possible questions.<br><br><span class="stage-title">Methodology Consultation</span><br> Refining your research methodology ensures robustness and clarity. We provide guidance on how to adapt and fine-tune your research methods for maximum impact.</p>
+      </div>
+
+      <div class="stage-card">
+        <h3>Stage 8</h3>
+        <p><span class="stage-title">Corrections as per Feedback</span><br> After the defense, feedback from your committee will require revisions. We support you in incorporating these changes efficiently and professionally, ensuring your final submission is flawless.</p>
+      </div>
+      <a href="index.html">← Back to Home</a>
+    </div>
+  </div>
+    <!-- Footer Start -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="footer-container">
+        <div class="footer-column about">
+          <img src="image/profile.jpg" alt="Logo" class="footer-logo">
+          <p>
+            DevMatrixLab is a unit of DevMatrix Educational Consultancy. Since its inception in 2015, the company has guided over 500 PhD candidates in their research journey. Originally established in Hyderabad,Chennai,bengaluru and Guntur DevMatrixLab continues to support doctoral scholars with expert consultation and tailored research assistance. Clients interested in discussing their doctoral research can schedule meetings any day between 9:00 AM and 9:00 PM at our office location.
+          </p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.threads.net/@devmatrixlab"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/devmatrixlab?utm_source=qr&igsh=MWdtODdkbnZnYmN2cA== "><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-column links">
+          <h4>LINKS</h4>
+          <ul>
+            <li><a href="#Home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#Services">Services</a></li>
+                <li><a href="#Portfolio">Our Work</a></li>
+                <li><a href="#PhDresearch">PhD Research</a></li>
+                <li><a href="#visa">Visa & Job Support</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column support">
+          <h4>SUPPORT</h4>
+          <div class="support-info">
+            <i class="fas fa-envelope"></i> devmatrixlab@gmail.com
+          </div>
+          <div class="support-info">
+            <i class="fas fa-phone"></i> 9347967147
+          </div>
+          <div class="support-info">
+            <i class="fas fa-mobile-alt"></i> 9640075131
+          </div>
+        </div>
+
+        <div class="footer-column address">
+          <h4>ADDRESS</h4>
+          <ul>
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              OFFICE 1 <br>
+              Beside JNTU Metro, upside of pista House, Hyderabad, Telangana-500085
+            </li><br>
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              OFFICE 2 <br>
+              beside marina mall, near toll plaz, navalur, chennai, Tamil Nadu
+            </li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              OFFICE 3 <br>
+              Beside of Guntur Bus Stop, Guntur, Andhra Pradesh
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© Copyright 2019. All Rights Reserved By <span>DevMatrixLab</span></p>
+      <div class="footer-links">
+        <a href="#">TERMS OF USER</a> |
+        <a href="#">LICENSE</a> |
+        <a href="#">SUPPORT</a>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer End -->
+    
+
+</body>
+</html>
+
+

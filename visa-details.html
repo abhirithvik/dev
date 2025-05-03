@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Visa Details</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px;
+    }
+
+    h1 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #003366;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-top: 40px;
+      color: #003366;
+    }
+
+    h3 {
+      font-size: 20px;
+      margin-top: 25px;
+      color: #003366;
+    }
+
+    p, li {
+      font-size: 16px;
+      line-height: 1.7;
+      color: #333;
+    }
+
+    ul {
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    .section {
+      margin-bottom: 30px;
+    }
+
+    .card {
+      background: #f2f8ff;
+      border-left: 5px solid #0066cc;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 30px;
+    }
+
+    a {
+      display: inline-block;
+      margin-top: 30px;
+      color: #0056b3;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .form-section {
+      background-color: #f9f9f9;
+      padding: 30px;
+      border-radius: 10px;
+      margin-top: 50px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .form-section h2 {
+      margin-bottom: 20px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #004080;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #002f5f;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 20px;
+      }
+    }
+  /* Footer Styles */
+  #footer {
+  background: #03043b;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  position: relative;
+}
+
+.footer-top {
+  padding: 30px 20px; /* ↓ Reduced from 60px */
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 100%; /* Full width */
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.footer-column {
+  flex: 1 1 220px;
+  margin: 10px; /* ↓ Reduced from 20px */
+  min-width: 220px;
+}
+
+.footer-logo {
+  width: 70px; /* Optional: Slightly smaller */
+  margin-bottom: 15px;
+}
+
+.footer-column h4 {
+  margin-bottom: 15px; /* ↓ Reduced spacing */
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.footer-column p {
+  line-height: 1.6; /* ↓ Less vertical space */
+  font-size: 13px;
+  color: white;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px; /* ↓ Less space between items */
+  font-size: 15px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.footer-column ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-column ul li a:hover {
+  color: #ffc107;
+}
+
+.footer-column ul li i {
+  margin-right: 8px;
+  font-size: 15px;
+  margin-top: 2px;
+  color: white;
+}
+
+.support-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* ↓ Less margin */
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.support-info i {
+  margin-right: 12px;
+  font-size: 18px;
+  margin-top: 2px;
+}
+
+.social-links {
+  margin-top: 15px; /* ↓ Less margin */
+}
+
+.social-links a {
+  display: inline-block;
+  margin-right: 8px;
+  font-size: 16px;
+  color: #fff;
+  background: #000;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.social-links a:hover {
+  background: #ffc107;
+  color: #000;
+}
+
+.footer-bottom {
+  background: #02122b;
+  padding: 15px; /* ↓ Reduced padding */
+  text-align: center;
+  font-size: 13px;
+}
+
+.footer-bottom p {
+  margin: 8px 0;
+  color: #ccc;
+}
+
+.footer-bottom p span {
+  color: #ffc107;
+  font-weight: 600;
+}
+
+.footer-links {
+  margin-top: 8px;
+}
+
+.footer-links a {
+  color: #fff;
+  margin: 0 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-links a:hover {
+  color: #ffc107;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .footer-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .footer-column {
+    flex: 1 1 45%;
+    margin: 10px;
+    text-align: center;
+  }
+  .footer-column ul li {
+    justify-content: center;
+  }
+  .support-info {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-column {
+    flex: 1 1 100%;
+    margin: 10px 0;
+    text-align: center;
+  }
+  .footer-column ul li {
+    justify-content: center;
+  }
+  .support-info {
+    justify-content: center;
+  }
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌍 Global Visa Assistance</h1>
+
+    <div class="section">
+      <p>We provide <strong>end-to-end visa solutions</strong> for individuals aiming to <strong>study, work, or settle abroad</strong>. Our experts handle the full process—from consultation to documentation and embassy submissions—with a high success rate, even for previously rejected applicants.</p>
+      <p>We cover <strong>student visas</strong>, <strong>work permits</strong>, <strong>dependent visas</strong>, and <strong>permanent residency</strong> applications. Let us help make your global dreams a reality.</p>
+      <p>Our team is well-versed with the latest immigration laws and ensures your application meets current embassy standards.</p>
+      <p>We provide personalized guidance based on your background, education, and destination country requirements.</p>
+      <p>Each visa type has specific requirements, and we simplify these into actionable checklists for faster preparation.</p>
+      <p>We also assist with translations, notarizations, and legalized documents if required by foreign authorities.</p>
+      <p>For students, we review offer letters, financial proof, and assist with education loans and insurance formalities.</p>
+      <p>Our mock interview sessions improve your confidence and readiness for embassy interviews.</p>
+      <p>Post-visa approval, we help with travel arrangements, accommodation booking, and airport pickup if needed.</p>
+      <p>Even if your visa was previously rejected, we analyze the reason and help you reapply with a stronger case.</p>
+      <p>Your visa success is our priority, and we stay with you at every step—right from the first query to landing abroad.</p>
+    </div>
+
+    <h2>🎯 Client Success Stories</h2>
+    <div class="card">
+      <h3>Student Visas</h3>
+      <ul>
+        <li>Anil Reddy – Germany visa approved in 17 days.</li>
+        <li>Sneha Patel – Canada PG diploma with full SOP guidance.</li>
+        <li>Zeeshan Khan – US F1 visa after mock interviews.</li>
+        <li>Ritika Sharma – UK Tier 4 visa with scholarship documentation.</li>
+        <li>Mohammed Ali – Australia student visa with IELTS waiver.</li>
+      </ul>
+    
+      <h3>Work Visas</h3>
+      <ul>
+        <li>Rahul Mehta – US H1B through employer application.</li>
+        <li>Victor Lee – German Blue Card with family documentation.</li>
+        <li>Aisha Rahman – Canadian work permit via LMIA process.</li>
+        <li>Karan Joshi – UAE employment visa with MOFA attestation.</li>
+        <li>Lina Gomez – Singapore EP with job contract assistance.</li>
+      </ul>
+    
+      <h3>PR & Dependent Visas</h3>
+      <ul>
+        <li>Fatima Bano – Canada PR via Express Entry.</li>
+        <li>Divya & Praveen – German spouse visa in 4 weeks.</li>
+        <li>Arjun Patel – Australia PR with ACS skills assessment.</li>
+        <li>Reema Das – UK dependent visa approved in 15 days.</li>
+        <li>Farhan Malik – New Zealand PR through skilled migrant category.</li>
+      </ul>
+    </div>
+
+    <h2>🛠️ Visa Application Process</h2>
+    <div class="section">
+      <h3>1. Initial Consultation</h3>
+      <p>Personal evaluation of your background, goals, and eligibility.</p>
+      <p>Discussion of suitable visa options based on your profile.</p>
+      <p>Clarification of timelines, costs, and documentation needed.</p>
+      <p>Understanding of country-specific immigration procedures.</p>
+      <p>Addressing your queries and setting realistic expectations.</p>
+
+      <h3>2. Document Review</h3>
+      <p>We create a tailored checklist based on your chosen visa category.</p>
+      <p>Each document is reviewed for completeness and accuracy.</p>
+      <p>We assist in gathering financial, academic, or employment records.</p>
+      <p>Translation or notarization support is provided if required.</p>
+      <p>All paperwork is aligned with embassy or consulate requirements.</p>
+
+      <h3>3. SOP / Cover Letter</h3>
+      <p>We help draft a compelling Statement of Purpose or Cover Letter.</p>
+      <p>The content is customized to match the visa officer’s expectations.</p>
+      <p>We highlight your motivations, plans, and supporting evidence clearly.</p>
+      <p>Our editors ensure the language is professional and persuasive.</p>
+      <p>Final drafts are proofread and formatted for official submission.</p>
+
+
+      <h3>4. Online Application Submission</h3>
+      <p>We fill and submit your application accurately through official portals.</p>
+      <p>Applications are submitted on VFS, IRCC, or relevant embassy platforms.</p>
+      <p>Each form is double-checked to ensure no mistakes or missing info.</p>
+      <p>We assist in uploading all necessary documents as per embassy format.</p>
+      <p>Ongoing tracking and updates are provided until a final decision.</p>
+
+      <h3>5. Fee Payment & Biometrics</h3>
+      <p>We guide you through the visa fee payment process securely.</p>
+      <p>Biometric appointments are scheduled as per your availability.</p>
+      <p>We ensure all receipts and confirmations are submitted properly.</p>
+      <p>Guidance is offered for uploading financial and accommodation proofs.</p>
+      <p>We help resolve issues like payment failures or portal errors.</p>
+
+      <h3>6. Interview Preparation</h3>
+      <p>Mock interview sessions are conducted for high-confidence delivery.</p>
+      <p>We cover common and profile-specific questions.</p>
+      <p>Real-time feedback is provided on tone, content, and clarity.</p>
+      <p>Special training for US, UK, Germany, and Canada interviews.</p>
+      <p>We help reduce anxiety and boost visa interview success rate.</p>
+
+      <h3>7. Post-Visa Guidance</h3>
+      <p>Support with booking flights and choosing the best route options.</p>
+      <p>We assist with blocked accounts, forex cards, and health insurance.</p>
+      <p>Help with arrival planning and accommodation search abroad.</p>
+      <p>Orientation on local laws, travel tips, and settlement steps.</p>
+      <p>We stay connected even after visa approval for smooth relocation.</p>
+    </div>
+
+    <h2>📅 Typical Visa Timelines</h2>
+    <ul>
+      <li><strong>USA:</strong> 2–6 weeks – F1, H1B, and B1/B2 visas vary by season and embassy availability.</li>
+      <li><strong>Canada:</strong> 4–8 weeks – Applies to study permits, Express Entry, and visitor visas. Biometrics may extend timelines.</li>
+      <li><strong>UK:</strong> ~15 working days – Standard processing for Tier 4 student and skilled worker visas. Priority services available.</li>
+      <li><strong>Germany:</strong> 3–6 weeks – For student and job seeker visas. Appointment wait time can vary significantly.</li>
+      <li><strong>Australia:</strong> 4–10 weeks – Covers student (subclass 500) and work visas. Includes character and health checks.</li>
+      <li><strong>New Zealand:</strong> 4–6 weeks – Common for study and post-study work visas. Online submission preferred.</li>
+      <li><strong>France:</strong> 2–4 weeks – For VLS-TS student and Schengen visas. Quick if documents are in order.</li>
+      <li><strong>Italy:</strong> 3–5 weeks – National visa for students and dependents. Requires full documentation upfront.</li>
+      <li><strong>Ireland:</strong> 3–6 weeks – Study and job offer-based visas. Postal application possible for some types.</li>
+      <li><strong>Sweden:</strong> 2–8 weeks – For university admissions, especially autumn intake. Online application speeds up process.</li>
+    </ul>
+
+    <a href="index.html">← Back to Home</a>
+
+    
+  </div>
+  <!-- Footer Start -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="footer-container">
+        <div class="footer-column about">
+          <img src="image/profile.jpg" alt="Logo" class="footer-logo">
+          <p>
+            DevMatrixLab is a unit of DevMatrix Educational Consultancy. Since its inception in 2015, the company has guided over 500 PhD candidates in their research journey. Originally established in Hyderabad,Chennai,bengaluru and Guntur DevMatrixLab continues to support doctoral scholars with expert consultation and tailored research assistance. Clients interested in discussing their doctoral research can schedule meetings any day between 9:00 AM and 9:00 PM at our office location.
+          </p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.threads.net/@devmatrixlab"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/devmatrixlab?utm_source=qr&igsh=MWdtODdkbnZnYmN2cA== "><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-column links">
+          <h4>LINKS</h4>
+          <ul>
+            <li><a href="#Home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#Services">Services</a></li>
+                <li><a href="#Portfolio">Our Work</a></li>
+                <li><a href="#PhDresearch">PhD Research</a></li>
+                <li><a href="#visa">Visa & Job Support</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column support">
+          <h4>SUPPORT</h4>
+          <div class="support-info">
+            <i class="fas fa-envelope"></i> devmatrixlab@gmail.com
+          </div>
+          <div class="support-info">
+            <i class="fas fa-phone"></i> 9347967147
+          </div>
+          <div class="support-info">
+            <i class="fas fa-mobile-alt"></i> 9640075131
+          </div>
+        </div>
+
+        <div class="footer-column address">
+          <h4>ADDRESS</h4>
+          <ul>
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              OFFICE 1 <br>
+              Beside JNTU Metro, upside of pista House, Hyderabad, Telangana-500085
+            </li><br>
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              OFFICE 2 <br>
+              beside marina mall, near toll plaz, navalur, chennai, Tamil Nadu
+            </li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              OFFICE 3 <br>
+              Beside of Guntur Bus Stop, Guntur, Andhra Pradesh
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© Copyright 2019. All Rights Reserved By <span>DevMatrixLab</span></p>
+      <div class="footer-links">
+        <a href="#">TERMS OF USER</a> |
+        <a href="#">LICENSE</a> |
+        <a href="#">SUPPORT</a>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer End -->
+    
+</body>
+</html>
+
+

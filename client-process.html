@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Client Process</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #f4f4f4;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input#searchInput {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #007bff;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tr.warning {
+      background-color: #fff3cd !important;
+    }
+
+    tr.danger {
+      background-color: #f8d7da !important;
+    }
+
+    select.status-select {
+      padding: 6px 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+      background-color: #e9ecef;
+    }
+
+    select.status-select:disabled {
+      color: #333;
+    }
+    /* Media Queries for Tablet (max-width: 1024px) */
+@media screen and (max-width: 1024px) {
+  body {
+    padding: 10px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  input#searchInput {
+    font-size: 15px;
+  }
+
+  th, td {
+    padding: 10px;
+  }
+}
+
+/* Media Queries for Mobile (max-width: 768px) */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 5px;
+  }
+
+  h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+
+  input#searchInput {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  /*thead {
+    display: none;
+  }*/
+
+
+  tr {
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    background: #fff;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+  }
+
+  td {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 5px;
+    border: none;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+  }
+
+  td::before {
+    content: attr(data-label);
+    font-weight: bold;
+    flex: 1;
+  }
+
+  select.status-select {
+    width: 100%;
+    font-size: 13px;
+  }
+}
+
+    /* Footer Styles */
+    #footer {
+  background: #03043b;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+  position: relative;
+}
+
+.footer-top {
+  padding: 30px 20px; /* ↓ Reduced from 60px */
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 100%; /* Full width */
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.footer-column {
+  flex: 1 1 220px;
+  margin: 10px; /* ↓ Reduced from 20px */
+  min-width: 220px;
+}
+
+.footer-logo {
+  width: 70px; /* Optional: Slightly smaller */
+  margin-bottom: 15px;
+}
+
+.footer-column h4 {
+  margin-bottom: 15px; /* ↓ Reduced spacing */
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.footer-column p {
+  line-height: 1.6; /* ↓ Less vertical space */
+  font-size: 13px;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 10px; /* ↓ Less space between items */
+  font-size: 15px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.footer-column ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-column ul li a:hover {
+  color: #ffc107;
+}
+
+.footer-column ul li i {
+  margin-right: 8px;
+  font-size: 15px;
+  margin-top: 2px;
+}
+
+.support-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* ↓ Less margin */
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.support-info i {
+  margin-right: 12px;
+  font-size: 18px;
+  margin-top: 2px;
+}
+
+.social-links {
+  margin-top: 15px; /* ↓ Less margin */
+}
+
+.social-links a {
+  display: inline-block;
+  margin-right: 8px;
+  font-size: 16px;
+  color: #fff;
+  background: #000;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  border-radius: 50%;
+  transition: background 0.3s;
+}
+
+.social-links a:hover {
+  background: #ffc107;
+  color: #000;
+}
+
+.footer-bottom {
+  background: #02122b;
+  padding: 15px; /* ↓ Reduced padding */
+  text-align: center;
+  font-size: 13px;
+}
+
+.footer-bottom p {
+  margin: 8px 0;
+}
+
+.footer-bottom p span {
+  color: #ffc107;
+  font-weight: 600;
+}
+
+.footer-links {
+  margin-top: 8px;
+}
+
+.footer-links a {
+  color: #fff;
+  margin: 0 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer-links a:hover {
+  color: #ffc107;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .footer-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .footer-column {
+    flex: 1 1 45%;
+    margin: 10px;
+    text-align: center;
+  }
+  .footer-column ul li {
+    justify-content: center;
+  }
+  .support-info {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer-column {
+    flex: 1 1 100%;
+    margin: 10px 0;
+    text-align: center;
+  }
+  .footer-column ul li {
+    justify-content: center;
+  }
+  .support-info {
+    justify-content: center;
+  }
+}
+  </style>
+</head>
+<body>
+
+<h1>Client Process Details</h1>
+
+<input type="text" id="searchInput" placeholder="Search by any keyword...">
+
+<table id="clientTable">
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Name</th>
+      <th>Location</th>
+      <th>About</th>
+      <th>Update</th>
+      <th>Deadline</th>
+      <th>Duration (days)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>1200</td><td>Ravi Teja</td><td>Hyderabad</td><td>USA Visa Process</td><td><select class="status-select" disabled><option>Active</option></select></td><td>2025-05-10</td><td class="duration"></td></tr>
+    <tr><td>1201</td><td>Sowmya Reddy</td><td>Guntur</td><td>Scopus Publication</td><td><select class="status-select" disabled><option>Processing</option></select></td><td>2025-05-04</td><td class="duration"></td></tr>
+    <tr><td>1202</td><td>Manoj Kumar</td><td>Nellore</td><td>IoT Thesis</td><td><select class="status-select" disabled><option>Completed</option></select></td><td>2025-04-28</td><td class="duration"></td></tr>
+    <tr><td>1203</td><td>Harika</td><td>Vijayawada</td><td>Canada Visa</td><td><select class="status-select" disabled><option>Processing</option></select></td><td>2025-05-14</td><td class="duration"></td></tr>
+    <tr><td>1204</td><td>Karthik Raju</td><td>Warangal</td><td>Clinic Web App</td><td><select class="status-select" disabled><option>Active</option></select></td><td>2025-05-25</td><td class="duration"></td></tr>
+    <tr><td>1205</td><td>Deepika</td><td>Chennai</td><td>IEEE Journal Paper</td><td><select class="status-select" disabled><option>Processing</option></select></td><td>2025-05-07</td><td class="duration"></td></tr>
+    <tr><td>1206</td><td>Srinivas</td><td>Vizag</td><td>UK Visa Docs</td><td><select class="status-select" disabled><option>Completed</option></select></td><td>2025-04-29</td><td class="duration"></td></tr>
+    <tr><td>1207</td><td>Meghana</td><td>Karimnagar</td><td>Data Science Project</td><td><select class="status-select" disabled><option>Active</option></select></td><td>2025-05-20</td><td class="duration"></td></tr>
+    <tr><td>1208</td><td>Chaitanya</td><td>Delhi</td><td>PhD Synopsis</td><td><select class="status-select" disabled><option>Processing</option></select></td><td>2025-05-03</td><td class="duration"></td></tr>
+    <tr><td>1209</td><td>Sandhya</td><td>Adilabad</td><td>AI in Education</td><td><select class="status-select" disabled><option>Completed</option></select></td><td>2025-04-25</td><td class="duration"></td></tr>
+    <tr><td>1210</td><td>Vamshi</td><td>Nizamabad</td><td>Germany Visa</td><td><select class="status-select" disabled><option>Processing</option></select></td><td>2025-05-09</td><td class="duration"></td></tr>
+    <tr><td>1211</td><td>Pavani</td><td>chennai</td><td>IoT Smart Agri</td><td><select class="status-select" disabled><option>Active</option></select></td><td>2025-05-16</td><td class="duration"></td></tr>
+    <tr><td>1212</td><td>Rohit</td><td>Ongole</td><td>UGC CARE Paper</td><td><select class="status-select" disabled><option>Completed</option></select></td><td>2025-04-28</td><td class="duration"></td></tr>
+    <tr><td>1213</td><td>Navya</td><td>Mahbubnagar</td><td>Australia PR Visa</td><td><select class="status-select" disabled><option>Active</option></select></td><td>2025-05-21</td><td class="duration"></td></tr>
+    <tr><td>1214</td><td>Ajay</td><td>Tirupati</td><td>ML Traffic Predictor</td><td><select class="status-select" disabled><option>Processing</option></select></td><td>2025-05-02</td><td class="duration"></td></tr>
+    <tr><td>1215</td><td>Bhavana</td><td>Kakinada</td><td>Thesis Editing</td><td><select class="status-select" disabled><option>Completed</option></select></td><td>2025-04-27</td><td class="duration"></td></tr>
+    <tr><td>1216</td><td>Aravind</td><td>Chittoor</td><td>E-Voting System</td><td><select class="status-select" disabled><option>Active</option></select></td><td>2025-05-12</td><td class="duration"></td></tr>
+    <tr><td>1217</td><td>Sirisha</td><td>Srikakulam</td><td>France Visa</td><td><select class="status-select" disabled><option>Processing</option></select></td><td>2025-05-13</td><td class="duration"></td></tr>
+    <tr><td>1218</td><td>Madhav</td><td>Hyderabad</td><td>Springer Paper</td><td><select class="status-select" disabled><option>Completed</option></select></td><td>2025-04-26</td><td class="duration"></td></tr>
+    <tr><td>1219</td><td>Lasya</td><td>kerala</td><td>Thesis Formatting</td><td><select class="status-select" disabled><option>Active</option></select></td><td>2025-05-01</td><td class="duration"></td></tr>
+  </tbody>
+</table>
+<!-- Footer Start -->
+<footer id="footer">
+    <div class="footer-top">
+      <div class="footer-container">
+        <div class="footer-column about">
+          <img src="image/profile.jpg" alt="Logo" class="footer-logo">
+          <p>
+            DevMatrixLab is a unit of DevMatrix Educational Consultancy. Since its inception in 2015, the company has guided over 500 PhD candidates in their research journey. Originally established in Hyderabad,Chennai,bengaluru and Guntur DevMatrixLab continues to support doctoral scholars with expert consultation and tailored research assistance. Clients interested in discussing their doctoral research can schedule meetings any day between 9:00 AM and 9:00 PM at our office location.
+          </p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.threads.net/@devmatrixlab"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/devmatrixlab?utm_source=qr&igsh=MWdtODdkbnZnYmN2cA== "><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-column links">
+          <h4>LINKS</h4>
+          <ul>
+            <li><a href="#Home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#Services">Services</a></li>
+                <li><a href="#Portfolio">Our Work</a></li>
+                <li><a href="#PhDresearch">PhD Research</a></li>
+                <li><a href="#visa">Visa & Job Support</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-column support">
+          <h4>SUPPORT</h4>
+          <div class="support-info">
+            <i class="fas fa-envelope"></i> devmatrixlab@gmail.com
+          </div>
+          <div class="support-info">
+            <i class="fas fa-phone"></i> 9347967147
+          </div>
+          <div class="support-info">
+            <i class="fas fa-mobile-alt"></i> 9640075131
+          </div>
+        </div>
+
+        <div class="footer-column address">
+          <h4>ADDRESS</h4>
+          <ul>
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              OFFICE 1 <br>
+              Beside JNTU Metro, upside of pista House, Hyderabad, Telangana-500085
+            </li><br>
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              OFFICE 2 <br>
+              beside marina mall, near toll plaz, navalur, chennai, Tamil Nadu
+            </li>
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              OFFICE 3 <br>
+              Beside of Guntur Bus Stop, Guntur, Andhra Pradesh
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© Copyright 2019. All Rights Reserved By <span>DevMatrixLab</span></p>
+      <div class="footer-links">
+        <a href="#">TERMS OF USER</a> |
+        <a href="#">LICENSE</a> |
+        <a href="#">SUPPORT</a>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer End -->
+
+  <script>
+    function calculateDurations() {
+      const rows = document.querySelectorAll("#clientTable tbody tr");
+      const today = new Date();
+      today.setHours(0, 0, 0, 0); // Normalize to midnight
+  
+      rows.forEach(row => {
+        const deadlineCell = row.cells[5];
+        const durationCell = row.querySelector(".duration");
+  
+        if (!deadlineCell || !durationCell) return;
+  
+        const deadlineText = deadlineCell.textContent.trim();
+        const deadlineDate = new Date(deadlineText);
+        deadlineDate.setHours(0, 0, 0, 0); // Normalize to midnight
+  
+        if (isNaN(deadlineDate)) {
+          durationCell.textContent = "Invalid date";
+          row.classList.add('danger');
+          return;
+        }
+  
+        const timeDiff = deadlineDate - today;
+        const dayDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+  
+        durationCell.textContent = dayDiff >= 0 ? dayDiff + " days" : "0 days";
+  
+        // Reset any previous classes
+        row.classList.remove('warning', 'danger');
+  
+        if (dayDiff <= 5 && dayDiff > 0) {
+          row.classList.add('warning');
+        } else if (dayDiff <= 0) {
+          row.classList.add('danger');
+        }
+      });
+    }
+  
+    // Search filter
+    document.getElementById('searchInput').addEventListener('keyup', function () {
+      const filter = this.value.toLowerCase();
+      const rows = document.querySelectorAll("#clientTable tbody tr");
+  
+      rows.forEach(row => {
+        const rowText = row.textContent.toLowerCase();
+        row.style.display = rowText.includes(filter) ? '' : 'none';
+      });
+    });
+  
+    window.addEventListener('load', calculateDurations);
+  </script>
+  
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
